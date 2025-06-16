@@ -1,0 +1,30 @@
+
+
+# SQL
+
+
+import sqlite3
+
+conn = sqlite3.connect('my_database.db')
+cursor = conn.cursor() 
+    
+
+cursor.execute("Query...")
+cursor.executemany("Query...", List_of_Tuples)
+
+list_of_data = cursor.fetchall()
+conn.commit()
+
+cursor.close()
+conn.close()
+        
+'''
+CURD Query:
+
+create table if not exists Table_Name (id integer primary key autoincrement, V1 text, V2 integer)
+insert into Table_Name (V1 , V2) values(?,?)
+select * from Table_Name where V1 like "%{V1.get()}%" 
+delete from Table_Name where id={V1}
+update Table_Name set V1="{V1}" , V2={V2}, where id={V_id}
+'''
+
