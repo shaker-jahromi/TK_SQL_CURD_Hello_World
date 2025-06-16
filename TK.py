@@ -12,7 +12,7 @@ from tkinter import messagebox
 root = tk.Tk()
 root.title("T")
 root.geometry("600x400") 
-
+# root.destroy()
 
 
 
@@ -38,6 +38,8 @@ def F1(txt='Default'):
     
     T1.delete(V1)
 
+
+    T1.delete(*T1.get_children())
 
 
 L1 = tk.Label(root,text='ali')
